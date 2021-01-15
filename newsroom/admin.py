@@ -10,7 +10,9 @@ class SectionAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('name', )}
 
 class AuthorAdmin(admin.ModelAdmin):
-    list_display = ('first', 'last', 'title', 'bio')
+    list_display = ('full_name', 'title', 'bio')
+    prepopulated_fields = {'full_name': ('first_name','last_name' )}
+
 
 
 admin.site.register(Article, ArticleAdmin)

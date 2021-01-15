@@ -1,5 +1,5 @@
 {% extends 'layout.html' %}
-{% load markdown_extras %}
+{% load custom_filters %}
 
 {% block title %}
 Newsroom | {{ object.title }}
@@ -8,6 +8,7 @@ Newsroom | {{ object.title }}
 {% block body %}
  <!-- Article Section -->
  <div class='container-fluid row bg-primary pl-5 p-3'><a class='text-light h4' href='{{ object.section.get_absolute_url }}'>{{ object.section }}</a></div>
+
 
 <div id='content-wrapper'>
    
@@ -24,8 +25,17 @@ Newsroom | {{ object.title }}
             </div>
         </div>
 
-       
+        <hr/>
 
+        <!-- Article Lead Image -->
+        <div class='row mb-3'>
+            <div class='col'>
+                
+                <div class='row'><img src="{{ object.image }}" alt='{{ object.alt }}' class='img-fluid rounded mx-auto d-block'/></div>
+                <div class='row my-2'><em><p>{{ object.subtitle }}</p></em></div>
+            </div>
+        </div>
+       
         <hr />
 
         <main>
@@ -43,7 +53,7 @@ Newsroom | {{ object.title }}
     <section id='author' class='container'>
          <!-- Author Mini Profile -->
         
-         <div class='row my-5'>
+         <div class='row my-2 mt-4'>
             <div class='col'>
                 <div class="card">
                     <div class="card-header">
@@ -56,7 +66,7 @@ Newsroom | {{ object.title }}
                                 {% if object.author.picture %}
                                 <img class='rounded-circle border border-primary img-thumbnail' src='{{ object.author.picture }}' />
                                 {% else %}
-                                <img class='rounded-circle border border-primary img-thumbnail' src="https://www.gravatar.com/avatar/{{object.author}}?s=200&d=identicon&r=PG" />
+                                <img class='rounded-circle border border-primary img-thumbnail' src="https://www.gravatar.com/avatar/{{ object.author | md5 }}?s=200&d=identicon&r=PG" />
                                 {% endif %}
 
                             </div>
@@ -65,7 +75,7 @@ Newsroom | {{ object.title }}
                                 <h5 class="card-title">{{ object.author }}</h5><p class='lead'>{{ object.author.title }}</p>
                       
                                 <p class="card-text">{{ object.author.bio }}</p>
-                                <a href="#" class="btn btn-primary">View {{ object.author.first }}'s Articles</a>
+                                <a href="/search?q={{ object.author.full_name }}" class="btn btn-primary">View {{ object.author.first_name }}'s Articles</a>
                             </div>
                         </div>
                     </div>
@@ -74,12 +84,6 @@ Newsroom | {{ object.title }}
         </div>
 
     </section>
-
-   
-    <section id='read_more'>
-        
-    </section>
-
 </div>
 
 

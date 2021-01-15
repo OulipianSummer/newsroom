@@ -3,15 +3,17 @@
 }
 
 .hero {
-    height: 50vh;
+    height: 35vh;
     background: rgb(2,0,36);
     background: linear-gradient(150deg, rgba(2,0,36,1) 0%, rgba(69,130,236,1) 0%, rgba(69,222,236,1) 100%);
 }
 
 footer {
-    height: 25vh;
+    min-height: 50vh;
+    max-height: 100vh;
 }
 
+/*  Four line text truncation rule  */
 .trunc-four-line {
     display: -webkit-box;
     -webkit-line-clamp: 4;
@@ -20,11 +22,8 @@ footer {
     text-overflow: ellipsis;
 }
 
-.profile {
-    min-width: 15vw;
-    min-height: 15vw;
-    max-width: 15vw;
-    max-height: 15vw;
+.no-bullets{
+    list-style-type: none;
 }
 
 blockquote {
@@ -47,3 +46,5 @@ blockquote {
     display: inline;
    
   }
+
+

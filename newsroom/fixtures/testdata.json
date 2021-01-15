@@ -1,0 +1,98 @@
+[
+    {
+      "model": "newsroom.author",
+      "pk": 1,
+      "fields": {
+        "first_name": "Alice",
+        "last_name": "Baxter",
+        "full_name": "Alice Baxter",
+        "slug": "alice-baxter",
+        "title": "Culture Corespondent",
+        "bio": "Alice lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam maximus arcu molestie venenatis feugiat. Vivamus maximus erat id feugiat tristique."
+      }
+    },
+    {
+      "model": "newsroom.author",
+      "pk": 2,
+      "fields": {
+        "first_name": "Cam",
+        "last_name": "Donovan",
+        "full_name": "Cam Donovan",
+        "slug": "cam-donovan",
+        "title": "Sports Journalist",
+        "bio": "Cam lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam maximus arcu molestie venenatis feugiat. Vivamus maximus erat id feugiat tristique."
+      }
+    }, 
+    {
+        "model": "newsroom.section",
+        "pk": 1,
+        "fields": {
+          "name": "Culture",
+          "slug": "culture"
+        }
+      },
+      {
+        "model": "newsroom.section",
+        "pk": 2,
+        "fields": {
+          "name": "Sports",
+          "slug": "sports"
+        }
+      },
+      {
+        "model": "newsroom.section",
+        "pk": 3,
+        "fields": {
+          "name": "Finance",
+          "slug": "finance"
+        }
+      },
+      {
+        "model": "newsroom.section",
+        "pk": 4,
+        "fields": {
+          "name": "World News",
+          "slug": "world-news"
+        }
+      },
+      {
+        "model": "newsroom.section",
+        "pk": 5,
+        "fields": {
+          "name": "Health",
+          "slug": "health"
+        }
+      },
+      {
+        "model": "newsroom.article",
+        "pk": 1,
+        "fields": {
+          "title": "Precious Paintings Stolen From The New York Met Gallery",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/3/30/Metropolitan_Museum_of_Art_%28The_Met%29_-_Central_Park%2C_NYC.jpg",
+          "subtitle": "Security experts from around the globe scratch their heads in disbelief.",
+          "alt": "The New York Met Gallery",
+          "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam maximus arcu molestie venenatis feugiat. Vivamus maximus erat id feugiat tristique. Aliquam sed velit aliquam, consectetur lorem sed, laoreet lectus. In ut vulputate quam. Curabitur ut placerat magna. Vivamus sollicitudin nulla massa, porta hendrerit elit tempor ut. Integer vitae tortor sapien. Quisque a bibendum arcu. Suspendisse eget convallis felis. Aenean faucibus felis sed finibus placerat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras id quam ornare, egestas nunc in, molestie arcu. In lobortis dignissim ex. Donec convallis ut mauris in interdum. Mauris porta ut leo id efficitur.",
+          "slug": "precious-paintings-stolen-new-york-met-gallery",
+          "section": 1,
+          "author": 1,
+          "timestamp": "2020-03-16T17:41:28+00:00"
+
+        }
+      },
+      {
+        "model": "newsroom.article",
+        "pk": 2,
+        "fields": {
+          "title": "Denver Broncos Erect New Stadium",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Broncos_Bleachers.JPG",
+          "subtitle": "A sneak peek at a row of seats bearing the Bronco's logo.",
+          "alt": "Broncos stadium",
+          "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam maximus arcu molestie venenatis feugiat. Vivamus maximus erat id feugiat tristique.  Aliquam sed velit aliquam, consectetur lorem sed, laoreet lectus. In ut vulputate quam. Curabitur ut placerat magna. Vivamus sollicitudin nulla massa, porta hendrerit elit tempor ut. Integer vitae tortor sapien. Quisque a bibendum arcu. Suspendisse eget convallis felis. Aenean faucibus felis sed finibus placerat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras id quam ornare, egestas nunc in, molestie arcu. In lobortis dignissim ex. Donec convallis ut mauris in interdum. Mauris porta ut leo id efficitur.",
+          "slug": "denver-broncos-erect-new-stadium",
+          "section": 2,
+          "author": 2,
+          "timestamp": "2020-04-16T17:41:28+00:00"
+
+        }
+      }
+  ]

@@ -28,8 +28,8 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#"><i class='fas fa-newspaper'></i> Newsroom</a>
+    <nav class="navbar fixed-top sticky-top navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/"><i class='fas fa-newspaper'></i> Newsroom</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#newsroomNav" aria-controls="newsroomNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -37,7 +37,7 @@
       <div class="collapse navbar-collapse" id="newsroomNav">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home
+            <a class="nav-link" href="/">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -57,28 +57,79 @@
             </div>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search">
+        <form class="form-inline my-2 my-lg-0" action="/search" method='GET'>
+          
+          {% if not request.GET.q %}
+          <input class="form-control mr-sm-2" type="text" placeholder="Search articles and authors..." name="q">
+          {% else %}
+          <input class="form-control mr-sm-2" type="text" value="{{ request.GET.q }}" placeholder="Search..." name="q">
+          {% endif %}
+
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class='fas fa-search'></i></button>
         </form>
       </div>
     </nav>
-
-  
+    
+    <!-- Body Content  -->
     {% block body %}
     {% endblock %}
 
     <!-- Site Footer -->
-<footer class='bg-dark p-2 pt-5 mt-5'>
-  <div class='container'>
+<footer class='bg-dark p-2 pt-5'>
+  <div class='container-fluid'>
       <div class='row'>
+
+        <div class='col-lg-3 col-md-4 col-sm-6'>
+          <ul class='no-bullets'>
+            <p class='lead'>Newsroom</p>
+            <li><a class='text-light' href='#'>Cras justo odio</a></li>
+            <li><a class='text-light' href='#'>Dapibus ac facilisis in</a></li>
+            <li><a class='text-light' href='#'>Morbi leo risus</a></li>
+            <li><a class='text-light' href='#'>Porta ac consectetur ac</a></li>
+            <li><a class='text-light' href='#'>Vestibulum at eros</a></li>
+          </ul>
+        </div>
+        
+        <div class='col-lg-3 col-md-4 col-sm-6'>
+          <ul class='no-bullets'>
+            <p class='lead'>Contact</p>
+            <li><a class='text-light' href='#'><i class='fas fa-building mr-3'></i>123 Example St.</a></li>
+            <li><a class='text-light' href='#'><i class='fas fa-phone mr-3'></i>(555) 555-555</a></li>
+            <li><a class='text-light' href='#'><i class='fas fa-envelope mr-3'></i>info@newsroom.com</a></li>
+            <li><a class='text-light' href='#'><i class='fab fa-twitter mr-3'></i>@newsroom_stories</a></li>
+            <li><a class='text-light' href='#'><i class='fab fa-instagram mr-3'></i>@newsroom_instagram</a></li>
+            <li><a class='text-light' href='#'><i class='fab fa-facebook-square mr-3'></i>Newsroom</a></li>
+          </ul>
+        </div>
+
+        <div class='col-lg-3 col-md-4 col-sm-6'>
+          <ul class='no-bullets'>
+            <p class='lead'>About</p>
+            <li><a class='text-light' href='#'>Cras justo odio</a></li>
+            <li><a class='text-light' href='#'>Dapibus ac facilisis in</a></li>
+            <li><a class='text-light' href='#'>Morbi leo risus</a></li>
+            <li><a class='text-light' href='#'>Porta ac consectetur ac</a></li>
+            <li><a class='text-light' href='#'>Vestibulum at eros</a></li>
+          </ul>
+        </div>
+
+        <div class='col-lg-3 col-md-4 col-sm-6'>
+          <ul class='no-bullets'>
+            <p class='lead'>Terms Of Service</p>
+            <li><a class='text-light' href='#'>Cras justo odio</a></li>
+            <li><a class='text-light' href='#'>Dapibus ac facilisis in</a></li>
+            <li><a class='text-light' href='#'>Morbi leo risus</a></li>
+            <li><a class='text-light' href='#'>Porta ac consectetur ac</a></li>
+            <li><a class='text-light' href='#'>Vestibulum at eros</a></li>
+          </ul>
+        </div>
          
       </div>
   </div>
 </footer>
 
   <!-- Bootstrap JS Bundle -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>

@@ -1,10 +1,10 @@
 {% extends 'layout.html' %}
 {% load custom_filters %}
 
-{% block title %}
-Newsroom | Recent Articles
-{% endblock %}
 
+{% block title %}
+Search | Newsroom
+{% endblock %}
 
 {% block body %}
 
@@ -12,8 +12,7 @@ Newsroom | Recent Articles
     <div class='row h-100 align-items-center'>
         
             <div class='mx-auto text-center text-white'>
-                <h1 class='display-1'><i class='fas fa-newspaper'></i> Newsroom</h1>
-                <p class='text-center text-white'>A Django Powered News App</p>
+                <h1 class='display-4'><i class='fas fa-search mr-2'></i>Search results for "{{ request.GET.q }}"</h1>
             </div>
     </div>
 </div>
@@ -24,18 +23,8 @@ Newsroom | Recent Articles
  
 <!-- Recent -->
 <section id='recent'>
-    <!-- Recent Articles Header -->
-    <div class='row my-3 text-sm-center text-lg-left pl-lg-2'>
-        <div class='col-md-12 col-sm-12 col-lg-4'>
-            <h2><i class='fas fa-stopwatch'></i> Recent Articles</h2>
-            <small class='text-muted'>As of {{ currentTime }}</small>
-            <hr />
-        </div>
-        
-    </div>
-   
-    
-    <!-- Recent Articles Cards -->
+
+    <!-- Search Results -->
     <div class='row my-3'>
         <div class='col'>
             <div class="card-columns">
@@ -82,7 +71,7 @@ Newsroom | Recent Articles
             </div>
             {% empty %}
                 </div>
-                <p class='lead text-lg-left text-md-center text-sm-center'><i class='fas fa-question-circle'></i> Newsroom can't find any recent articles...</p>
+                <p class='lead text-center'><i class='fas fa-question-circle'></i> Newsroom can't find any results matching that query.</p>
 
             {% endfor %}
               
