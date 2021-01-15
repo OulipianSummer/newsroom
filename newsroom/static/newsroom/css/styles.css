@@ -1,0 +1,49 @@
+#content-wrapper {
+    padding: 20px
+}
+
+.hero {
+    height: 50vh;
+    background: rgb(2,0,36);
+    background: linear-gradient(150deg, rgba(2,0,36,1) 0%, rgba(69,130,236,1) 0%, rgba(69,222,236,1) 100%);
+}
+
+footer {
+    height: 25vh;
+}
+
+.trunc-four-line {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.profile {
+    min-width: 15vw;
+    min-height: 15vw;
+    max-width: 15vw;
+    max-height: 15vw;
+}
+
+blockquote {
+    background: #f9f9f9;
+    border-left: 10px solid #ccc;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "\201C""\201D""\2018""\2019";
+    font-size: larger;    
+  }
+  blockquote:before {
+    color: #ccc;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+  }
+  blockquote p {
+    display: inline;
+   
+  }

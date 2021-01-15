@@ -1,0 +1,103 @@
+{% extends 'layout.html' %}
+{% load markdown_extras %}
+
+{% block title %}
+Newsroom | Recent Articles
+{% endblock %}
+
+
+{% block body %}
+<script>
+    //Initialize all popovers
+    $(function () {
+        $('[data-toggle="popover"]').popover()
+      })
+
+</script>
+
+<div class='container-fluid bg-dark hero mb-5'>
+    <div class='row h-100 align-items-center'>
+        
+            <div class='mx-auto text-center text-white'>
+                <h1 class='display-1'><i class='fas fa-newspaper'></i> Newsroom</h1>
+                <p class='text-center text-white'>A Django Powered News App</p>
+            </div>
+    </div>
+</div>
+
+<!-- Article List -->
+<main id='content-wrapper'>
+<div class='container my-5'>
+ 
+<!-- Recent -->
+<section id='recent'>
+    <!-- Recent Articles Header -->
+    <div class='row my-3 text-sm-center text-lg-left pl-lg-2'>
+        <div class='col-md-12 col-sm-12 col-lg-4'>
+            <h2><i class='fas fa-stopwatch'></i> Recent Articles</h2>
+            <small class='text-muted'>As of {{ currentTime }}</small>
+            <hr />
+        </div>
+        
+    </div>
+   
+    
+    <!-- Recent Articles Cards -->
+    <div class='row my-3'>
+        <div class='col'>
+            <div class="card-columns">
+
+            {% for article in object_list %}
+            <div class="card" style="width : 20rem">
+                <img class="card-img-top" src="..." alt="Card img top">
+        
+                <div class="card-body mx-2">
+                  
+                 <div class='row'>
+                     <div class='col'>
+                         <div class='row'><h5 class="card-title"><a href='{{ article.get_absolute_url }}'>{{ article.title }}</a></h5></div>
+                         <div class='row'><small>By: {{ article.author }}</small></div>
+                         <div class='row'><small>Posted On: {{ article.timestamp }}</small></div>
+                     </div>
+            
+            </div>   
+
+                  <hr>
+                 
+                  <p class="card-text text-truncate">{{ article.body }}</p>
+                  
+                <div class='row'>
+                    <div class='col d-flex justify-content-end'>
+                        <a class='btn btn-outline-primary' href='{{ article.get_absolute_url }}'>Read More</a>
+                    </div>                  
+                </div>
+                </div>
+
+                <div class='card-footer'>
+                <div class='row d-flex justify-content-end'>
+                    <div class='col align-self-center'>Share This</div>
+                    <div class='col align-self-center'>
+                        <div class="btn-group" role="group" aria-label="Social toolbar">
+                            <a type="button" data-container='body' data-toggle="popover" data-placement="top" data-content="Share on Twitter" class="btn btn-primary"><i class='fab fa-twitter'></i></a>
+                            <a type="button" class="btn btn-primary"><i class='fab fa-facebook'></i></a>
+                            <a type="button" class="btn btn-primary"><i class='fas fa-envelope'></i></a>
+                            
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            {% empty %}
+                </div>
+                <p class='lead text-lg-left text-md-center text-sm-center'><i class='fas fa-question-circle'></i> Newsroom can't find any recent articles...</p>
+
+            {% endfor %}
+              
+            </div>  
+        </div>
+    </div>
+</section>
+
+</div>
+</main>
+{% endblock %}

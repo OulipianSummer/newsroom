@@ -1,0 +1,87 @@
+{% extends 'layout.html' %}
+{% load markdown_extras %}
+
+{% block title %}
+Newsroom | {{ object.title }}
+{% endblock %}
+
+{% block body %}
+ <!-- Article Section -->
+ <div class='container-fluid row bg-primary pl-5 p-3'><a class='text-light h4' href='{{ object.section.get_absolute_url }}'>{{ object.section }}</a></div>
+
+<div id='content-wrapper'>
+   
+    
+    <div class='container'>
+        
+
+        <!-- Article header-->
+        <div class='row my-5 mx-2'>
+            <div class='col'>
+                <div class='row'><h1>{{ object.title }}</h1></div>
+                <div class='row'>By {{ object.author }}</div>
+                <div class='row'><small>Posted On {{ object.timestamp }}</small></div>
+            </div>
+        </div>
+
+       
+
+        <hr />
+
+        <main>
+            <div class='row'>
+                <div class='col'>
+                    {{ object.body | markdown | safe }}
+                </div>
+                
+            </div>
+        </main>
+    </div>
+
+    <hr>
+
+    <section id='author' class='container'>
+         <!-- Author Mini Profile -->
+        
+         <div class='row my-5'>
+            <div class='col'>
+                <div class="card">
+                    <div class="card-header">
+                      About The Author
+                    </div>
+
+                    <div class="card-body">
+                        <div class='row'>
+                            <div class='col-3'>
+                                {% if object.author.picture %}
+                                <img class='rounded-circle border border-primary img-thumbnail' src='{{ object.author.picture }}' />
+                                {% else %}
+                                <img class='rounded-circle border border-primary img-thumbnail' src="https://www.gravatar.com/avatar/{{object.author}}?s=200&d=identicon&r=PG" />
+                                {% endif %}
+
+                            </div>
+
+                            <div class='col'>
+                                <h5 class="card-title">{{ object.author }}</h5><p class='lead'>{{ object.author.title }}</p>
+                      
+                                <p class="card-text">{{ object.author.bio }}</p>
+                                <a href="#" class="btn btn-primary">View {{ object.author.first }}'s Articles</a>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+    </section>
+
+   
+    <section id='read_more'>
+        
+    </section>
+
+</div>
+
+
+
+{% endblock %}

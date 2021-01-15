@@ -1,0 +1,5 @@
+# Database file
+*.sqlite3
+
+#Secrets
+secrets.py
