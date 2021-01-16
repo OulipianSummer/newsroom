@@ -1,7 +1,7 @@
 # Newsroom, a Django powered news app
 Newsroom is a simple Django app that converts markdown syntax into news articles.
 
-![screenshot][https://raw.githubusercontent.com/OulipianSummer/newsroom/master/newsroom_screenshot.png]
+![screenshot](https://raw.githubusercontent.com/OulipianSummer/newsroom/master/newsroom_screenshot.png)
 
 
 ## Django Playground
