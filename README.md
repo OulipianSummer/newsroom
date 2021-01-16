@@ -1,5 +1,6 @@
 # Newsroom, a Django powered news app
-Newsroom is a simple Django app that converts markdown syntax into news articles.
+Newsroom is a simple Django app that converts markdown syntax into news articles and makes use of some of Django's more interesting features.
+
 
 ![screenshot](https://raw.githubusercontent.com/OulipianSummer/newsroom/master/newsroom_screenshot.png)
 
@@ -7,7 +8,9 @@ Newsroom is a simple Django app that converts markdown syntax into news articles
 ## Django Playground
 This project was started to act as a sort of sandbox for employing some of Django's more advanced features like custom template tags, context processors, fixtures, and queryset filtering.
 
-**Here are some of the more exciting features of this app.**
+Feel free to use this as a template for a news website!
+
+**Here are some of the things this app can do.**
 
 | Django Feature | Use In This App |
 |-----------------| --------------
@@ -15,6 +18,7 @@ This project was started to act as a sort of sandbox for employing some of Djang
 | Template Tags | A set of custom template tags convert strip markdown syntax from each article an generate a short 150 character lead for the article's list views. |
 | Context Processors | A custom context processor provides Django Model information to the layout.html template. |
 | Fixtures | For testing purposes, a set of fake articles can be called using the `loaddata` command, but more articles could be imported using AJAX and some JSON processing. |
+| Queryset Filtering | Newsroom has a built in search feature that can search articles by title, author, or section name. |
 
 ## How to use
 
