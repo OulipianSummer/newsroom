@@ -23,56 +23,60 @@
   <!-- Bootswatch Theme -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/litera/bootstrap.min.css" integrity="sha384-enpDwFISL6M3ZGZ50Tjo8m65q06uLVnyvkFO3rsoW0UC15ATBFz3QEhr3hmxpYsn" crossorigin="anonymous">
 
-
 </head> 
 
 <body>
-    <!-- Navbar -->
-    <nav class="navbar fixed-top sticky-top navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="/"><i class='fas fa-newspaper'></i> Newsroom</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#newsroomNav" aria-controls="newsroomNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    
-      <div class="collapse navbar-collapse" id="newsroomNav">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="/">Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-       
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Sections</a>
-            <div class="dropdown-menu">
-              {% for section in allSections %}
-              <a class="dropdown-item" href="section/{{ section.slug }}">{{ section.name }}</a>
-              {% empty %}
-              <p class="dropdown-header">No sections yet</p>
-              {% endfor %}
-            </div>
-          </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0" action="/search" method='GET'>
-          
-          {% if not request.GET.q %}
-          <input class="form-control mr-sm-2" type="text" placeholder="Search articles and authors..." name="q">
-          {% else %}
-          <input class="form-control mr-sm-2" type="text" value="{{ request.GET.q }}" placeholder="Search..." name="q">
-          {% endif %}
 
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class='fas fa-search'></i></button>
-        </form>
-      </div>
-    </nav>
+  <!-- Navbar -->
+<header class='fixed-top sticky-top'>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/"><i class='fas fa-newspaper'></i> Newsroom</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#newsroomNav" aria-controls="newsroomNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="newsroomNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+     
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Sections</a>
+          <div class="dropdown-menu">
+            {% for section in allSections %}
+            <a class="dropdown-item" href="/search?q={{ section.name }}">{{ section.name }}</a>
+            {% empty %}
+            <p class="dropdown-header">No sections yet</p>
+            {% endfor %}
+          </div>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0" action="/search" method='GET'>
+        
+        {% if not request.GET.q %}
+        <input class="form-control mr-sm-2" type="text" placeholder="Search anything..." name="q">
+        {% else %}
+        <input class="form-control mr-sm-2" type="text" value="{{ request.GET.q }}" placeholder="Search anything..." name="q">
+        {% endif %}
+  
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class='fas fa-search'></i></button>
+      </form>
+    </div>
+  </nav>
+  </header>
+    
     
     <!-- Body Content  -->
     {% block body %}
     {% endblock %}
+
 
     <!-- Site Footer -->
 <footer class='bg-dark p-2 pt-5'>
@@ -132,6 +136,9 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</body>
 
+
+  
+</body>
+    
 </html>

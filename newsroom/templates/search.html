@@ -26,11 +26,11 @@ Search | Newsroom
 
     <!-- Search Results -->
     <div class='row my-3'>
-        <div class='col'>
-            <div class="card-columns">
+
+        <div class="card-columns">
 
             {% for article in object_list %}
-            <div class="card" style="width : 20rem">
+            <div class="card">
                 <a href="{{ article.get_absolute_url }}"><img class="card-img-top thumbnail" src="{{ article.image }}" alt="{{ article.title }}"></a>
         
                 <div class="card-body">
@@ -46,7 +46,7 @@ Search | Newsroom
 
                   <hr>
                  
-                  <p class="card-text trunc-four-line">{{ article.body | plaintext | safe }}</p>
+                  <p class="card-text trunc-four-line">{{ article.body | plaintext | lead | safe }}</p>
                   
                 <div class='row'>
                     <div class='col d-flex justify-content-end'>
@@ -71,12 +71,16 @@ Search | Newsroom
             </div>
             {% empty %}
                 </div>
-                <p class='lead text-center'><i class='fas fa-question-circle'></i> Newsroom can't find any results matching that query.</p>
+                <p class='lead text-lg-left text-md-center text-sm-center'><i class='fas fa-question-circle'></i> Newsroom can't find any recent articles...</p>
 
             {% endfor %}
               
-            </div>  
-        </div>
+            </div>
+
+            
+              
+    </div>  
+
     </div>
 </section>
 </div>

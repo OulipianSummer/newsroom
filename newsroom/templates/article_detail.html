@@ -7,15 +7,10 @@ Newsroom | {{ object.title }}
 
 {% block body %}
  <!-- Article Section -->
- <div class='container-fluid row bg-primary pl-5 p-3'><a class='text-light h4' href='{{ object.section.get_absolute_url }}'>{{ object.section }}</a></div>
-
-
-<div id='content-wrapper'>
-   
+ <div class='container-fluid row bg-primary pl-5 p-3'><a class='text-light h4' href='/search?q={{ object.section }}'>{{ object.section }}</a></div>
     
     <div class='container'>
         
-
         <!-- Article header-->
         <div class='row my-5 mx-2'>
             <div class='col'>
@@ -24,9 +19,8 @@ Newsroom | {{ object.title }}
                 <div class='row'><small>Posted On {{ object.timestamp }}</small></div>
             </div>
         </div>
-
         <hr/>
-
+        
         <!-- Article Lead Image -->
         <div class='row mb-3'>
             <div class='col'>
@@ -84,7 +78,7 @@ Newsroom | {{ object.title }}
         </div>
 
     </section>
-</div>
+
 
 
 

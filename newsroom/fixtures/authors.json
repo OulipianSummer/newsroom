@@ -1,0 +1,62 @@
+[
+    {
+        "model": "newsroom.author",
+        "pk": 1,
+        "fields": {
+          "first_name": "Alice",
+          "last_name": "Baxter",
+          "full_name": "Alice Baxter",
+          "slug": "alice-baxter",
+          "title": "Culture Corespondent",
+          "bio": "Alice lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam maximus arcu molestie venenatis feugiat. Vivamus maximus erat id feugiat tristique."
+        }
+      },
+      {
+        "model": "newsroom.author",
+        "pk": 2,
+        "fields": {
+          "first_name": "Cam",
+          "last_name": "Donovan",
+          "full_name": "Cam Donovan",
+          "slug": "cam-donovan",
+          "title": "Sports Journalist",
+          "bio": "Cam lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam maximus arcu molestie venenatis feugiat. Vivamus maximus erat id feugiat tristique."
+        }
+      },
+      {
+        "model": "newsroom.author",
+        "pk": 3,
+        "fields": {
+          "first_name": "Eva",
+          "last_name": "Franklin",
+          "full_name": "Eva Franklin",
+          "slug": "eva-franklin",
+          "title": "Finance Journalist",
+          "bio": "Eva lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam maximus arcu molestie venenatis feugiat. Vivamus maximus erat id feugiat tristique."
+        }
+      }, 
+      {
+        "model": "newsroom.author",
+        "pk": 4,
+        "fields": {
+          "first_name": "Greg",
+          "last_name": "Hayrick",
+          "full_name": "Greg Hayrick",
+          "slug": "greg-hayrick",
+          "title": "World News Corespondent",
+          "bio": "Greg lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam maximus arcu molestie venenatis feugiat. Vivamus maximus erat id feugiat tristique."
+        }
+      },
+      {
+        "model": "newsroom.author",
+        "pk": 5,
+        "fields": {
+          "first_name": "Ingrid",
+          "last_name": "Jackson",
+          "full_name": "Ingrid Jackson",
+          "slug": "ingrid-jackson",
+          "title": "Health Columnist",
+          "bio": "Ingrid lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam maximus arcu molestie venenatis feugiat. Vivamus maximus erat id feugiat tristique."
+        }
+      }
+]
