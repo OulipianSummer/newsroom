@@ -20,13 +20,16 @@ Feel free to use this as a template for a news website!
 | Fixtures | For testing purposes, a set of fake articles can be called using the `loaddata` command, but more articles could be imported using AJAX and some JSON processing. |
 | Queryset Filtering | Newsroom has a built in search feature that can search articles by title, author, or section name. |
 
-## How to use
+## How to Use
 
 **Pre-Setup Note**
-This Django project has had the secret key removed, just in case I decide to deploy it someday. In the mean time, you will need to make your own secret key and add it to the /django_news/settings.py file.
+
+This Django project has had the secret key removed, just in case I decide to deploy it someday. In the mean time, you will need to make your own secret key and add it to the `/django_news/settings.py file`.
 
 If you need help with this step, [here is a handy guide on making a new secret key](https://humberto.io/blog/tldr-generate-django-secret-key/).
 
+
+### Setup Instructions
 1. First, install the requirements for this app (Django 3.1, BeautifulSoup 4, Markdown 3.3)
 
 ```
